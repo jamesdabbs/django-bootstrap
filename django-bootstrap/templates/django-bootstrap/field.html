@@ -1,0 +1,17 @@
+{% if inline %}
+    {{ field }} <span class="label label-success inputSaved" style="display:none;">Saved!</span>
+{% else %}
+    <div class="control-group{% if field.errors %} error{% else %}{% if required %} warning{% endif %}{% endif %} control-group-{{ field.html_name }}">
+        <label class="control-label">
+            {{ field.label }}
+        </label>
+        <div class="controls">
+            {{ field }}
+            <span class="label label-success inputSaved" style="display:none;">Saved!</span>
+            {% for error in field.errors %}
+                <p class="help-block help-block-error">({{ error }})</span>
+            {% endfor %}
+            <p class="help-block">{{ field.help_text|safe }}</span>
+        </div>
+    </div>
+{% endif %}
