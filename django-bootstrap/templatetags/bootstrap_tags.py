@@ -66,7 +66,7 @@ def bootstrap(bound_field, args=''):
     # Changes to the bootstrap template
     inline = kwargs.get('inline', False)
     required = kwargs.get('required', False)
-    return render_to_string("includes/bootstrap/field.html", {
+    return render_to_string("django-bootstrap/field.html", {
         'field': bound_field,
         'inline': inline,
         'required': required
