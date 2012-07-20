@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-bootstrap',
-    version='0.0.1.2',
+    version='0.0.1.3',
     description='Tools for rendering templates in a format compatible with ' \
                 'Twitter Bootstrap',
 

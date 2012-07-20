@@ -4,15 +4,23 @@ from django.utils.safestring import mark_safe
 
 register = template.Library()
 
+
 @register.simple_tag
 def bootstrap_css():
     return mark_safe('<link href="http://twitter.github.com/bootstrap/'
                      'assets/css/bootstrap.css" rel="stylesheet">')
 
+
 @register.simple_tag
 def jquery(version='1.7.2'):
     return mark_safe('<script src="https://ajax.googleapis.com/ajax/libs/'
         'jquery/%s/jquery.min.js" type="text/javascript"></script>' % version)
+
+
+@register.inclusion_tag('django-bootstrap/messages.html', takes_context=True)
+def bootstrap_messages(context):
+    return {'messages': context['messages']}
+
 
 @register.filter
 def bootstrap(bound_field, args=''):
