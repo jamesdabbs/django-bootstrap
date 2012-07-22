@@ -22,6 +22,11 @@ def bootstrap_messages(context):
     return {'messages': context['messages']}
 
 
+@register.inclusion_tag('django-bootstrap/alert-message.html')
+def alert_message(tag, message):
+    return {'tag': tag, 'message': message}
+
+
 @register.filter
 def bootstrap(bound_field, args=''):
     """
