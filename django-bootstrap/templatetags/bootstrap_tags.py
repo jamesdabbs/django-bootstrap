@@ -7,8 +7,8 @@ register = template.Library()
 
 @register.simple_tag
 def bootstrap_css():
-    return mark_safe('<link href="http://twitter.github.com/bootstrap/'
-                     'assets/css/bootstrap.css" rel="stylesheet">')
+    return mark_safe('<link href="https://netdna.bootstrapcdn.com/bootstrap/'
+                     '2.3.2/css/bootstrap.min.css" rel="stylesheet">')
 
 
 @register.simple_tag
